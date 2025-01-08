@@ -84,3 +84,29 @@ For questions, issues, or suggestions, feel free to reach out!
 If you wish to contribute to the development, you can open an issue on GitHub or contact me directly on Discord.
 
 👤 **Username:** nexusarm
+
+
+
+# 🔮 **Future Possibilities with DND Prices API**
+
+If, in the future, it becomes possible to obtain access to the APIs of [DND Prices](https://www.dndprices.com/), the program could be significantly enhanced. Specifically:
+
+1. **Elimination of the Second Screen Requirement:**
+
+   - With direct access to the DND Prices API, it would no longer be necessary to use a second screen for price lookups. The program could retrieve item prices programmatically, reducing complexity and improving usability.
+
+2. **In-Game Overlay Integration:**
+
+   - The program could evolve into an overlay system directly displayed on the game screen. This would allow users to see item prices in real-time without interrupting their gameplay experience.
+
+3. **Enhanced Speed and Accuracy:**
+
+   - By using APIs, data retrieval would be faster and more accurate, avoiding potential issues with OCR errors or misclicks.
+
+
+These improvements would make the tool more user-friendly and efficient, opening up new opportunities for advanced features and seamless integration.
+
+
+---
+
+For now, the current program setup serves as a workaround until such API access becomes available.
