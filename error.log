@@ -1,0 +1,315 @@
+2025-01-13 22:36:15,873 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 12, in process_image_and_search_price
+    cropped_image, match_val = imageProcessor.find_and_crop_image()
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\ImageProcessor.py", line 54, in find_and_crop_image
+    top_left, top_right, bottom_left, bottom_right, match_val = self.find_image_in_screenshot(template_path)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\ImageProcessor.py", line 28, in find_image_in_screenshot
+    for scale in np.linspace(20, 1.5, 0.5):
+  File "<__array_function__ internals>", line 180, in linspace
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\numpy\core\function_base.py", line 120, in linspace
+    num = operator.index(num)
+TypeError: 'float' object cannot be interpreted as an integer
+2025-01-13 22:36:18,101 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 12, in process_image_and_search_price
+    cropped_image, match_val = imageProcessor.find_and_crop_image()
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\ImageProcessor.py", line 54, in find_and_crop_image
+    top_left, top_right, bottom_left, bottom_right, match_val = self.find_image_in_screenshot(template_path)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\ImageProcessor.py", line 28, in find_image_in_screenshot
+    for scale in np.linspace(20, 1.5, 0.5):
+  File "<__array_function__ internals>", line 180, in linspace
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\numpy\core\function_base.py", line 120, in linspace
+    num = operator.index(num)
+TypeError: 'float' object cannot be interpreted as an integer
+2025-01-13 22:36:25,459 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 12, in process_image_and_search_price
+    cropped_image, match_val = imageProcessor.find_and_crop_image()
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\ImageProcessor.py", line 54, in find_and_crop_image
+    top_left, top_right, bottom_left, bottom_right, match_val = self.find_image_in_screenshot(template_path)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\ImageProcessor.py", line 28, in find_image_in_screenshot
+    for scale in np.linspace(0.5, 1.5, 20):
+  File "<__array_function__ internals>", line 180, in linspace
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\numpy\core\function_base.py", line 120, in linspace
+    num = operator.index(num)
+TypeError: 'float' object cannot be interpreted as an integer
+2025-01-13 22:36:27,163 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 12, in process_image_and_search_price
+    cropped_image, match_val = imageProcessor.find_and_crop_image()
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\ImageProcessor.py", line 54, in find_and_crop_image
+    top_left, top_right, bottom_left, bottom_right, match_val = self.find_image_in_screenshot(template_path)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\ImageProcessor.py", line 28, in find_image_in_screenshot
+    for scale in np.linspace(0.5, 1.5, 20):
+  File "<__array_function__ internals>", line 180, in linspace
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\numpy\core\function_base.py", line 120, in linspace
+    num = operator.index(num)
+TypeError: 'float' object cannot be interpreted as an integer
+2025-01-13 23:18:36,414 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 14, in process_image_and_search_price
+    text = imageProcessor.extract_text_from_image(cropped_image)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\ImageProcessor.py", line 64, in extract_text_from_image
+    image_rgb = image.convert("RGB")
+AttributeError: 'tuple' object has no attribute 'convert'
+2025-01-13 23:18:56,259 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 14, in process_image_and_search_price
+    text = imageProcessor.extract_text_from_image(cropped_image)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\ImageProcessor.py", line 64, in extract_text_from_image
+    image_rgb = image.convert("RGB")
+AttributeError: 'tuple' object has no attribute 'convert'
+2025-01-13 23:19:01,829 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 14, in process_image_and_search_price
+    text = imageProcessor.extract_text_from_image(cropped_image)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\ImageProcessor.py", line 64, in extract_text_from_image
+    image_rgb = image.convert("RGB")
+AttributeError: 'tuple' object has no attribute 'convert'
+2025-01-14 17:20:47,800 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x0000018C21E40C70>, 'Connection to www.dndprices.com timed out. (connect timeout=None)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.dndprices.com', port=443): Max retries exceeded with url: /_api/wix-code-public-dispatcher-ng/siteview/_webMethods/backend/predict.jsw/get_offers_new.ajax?gridAppId=2f3857f5-45d7-49a9-b00d-3d70ced3c241&viewMode=site (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000018C21E40C70>, 'Connection to www.dndprices.com timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 20, in process_image_and_search_price
+    price_searcher.execution(name, stat)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 83, in execution
+    self.make_request()
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 58, in make_request
+    response = requests.post(self.url, headers=self.headers, json=self.body)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='www.dndprices.com', port=443): Max retries exceeded with url: /_api/wix-code-public-dispatcher-ng/siteview/_webMethods/backend/predict.jsw/get_offers_new.ajax?gridAppId=2f3857f5-45d7-49a9-b00d-3d70ced3c241&viewMode=site (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000018C21E40C70>, 'Connection to www.dndprices.com timed out. (connect timeout=None)'))
+2025-01-15 13:52:32,204 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 20, in process_image_and_search_price
+    price_searcher.execution(name, stat)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 83, in execution
+    self.make_request()
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 59, in make_request
+    self.response_data = response.json()
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-01-18 14:21:40,340 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 20, in process_image_and_search_price
+    price_searcher.execution(name, stat)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 83, in execution
+    self.make_request()
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 59, in make_request
+    self.response_data = response.json()
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-01-18 14:36:28,800 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x0000023069C30F10>, 'Connection to www.dndprices.com timed out. (connect timeout=None)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.dndprices.com', port=443): Max retries exceeded with url: /_api/wix-code-public-dispatcher-ng/siteview/_webMethods/backend/predict.jsw/get_offers_new.ajax?gridAppId=2f3857f5-45d7-49a9-b00d-3d70ced3c241&viewMode=site (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000023069C30F10>, 'Connection to www.dndprices.com timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 20, in process_image_and_search_price
+    price_searcher.execution(name, stat)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 83, in execution
+    self.make_request()
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 58, in make_request
+    response = requests.post(self.url, headers=self.headers, json=self.body)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='www.dndprices.com', port=443): Max retries exceeded with url: /_api/wix-code-public-dispatcher-ng/siteview/_webMethods/backend/predict.jsw/get_offers_new.ajax?gridAppId=2f3857f5-45d7-49a9-b00d-3d70ced3c241&viewMode=site (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000023069C30F10>, 'Connection to www.dndprices.com timed out. (connect timeout=None)'))
+2025-01-18 14:36:54,832 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x000002303EA15A50>, 'Connection to www.dndprices.com timed out. (connect timeout=None)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.dndprices.com', port=443): Max retries exceeded with url: /_api/wix-code-public-dispatcher-ng/siteview/_webMethods/backend/predict.jsw/get_offers_new.ajax?gridAppId=2f3857f5-45d7-49a9-b00d-3d70ced3c241&viewMode=site (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002303EA15A50>, 'Connection to www.dndprices.com timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 20, in process_image_and_search_price
+    price_searcher.execution(name, stat)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 83, in execution
+    self.make_request()
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 58, in make_request
+    response = requests.post(self.url, headers=self.headers, json=self.body)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='www.dndprices.com', port=443): Max retries exceeded with url: /_api/wix-code-public-dispatcher-ng/siteview/_webMethods/backend/predict.jsw/get_offers_new.ajax?gridAppId=2f3857f5-45d7-49a9-b00d-3d70ced3c241&viewMode=site (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002303EA15A50>, 'Connection to www.dndprices.com timed out. (connect timeout=None)'))
+2025-01-18 14:49:16,587 An error occurred
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\main.py", line 20, in process_image_and_search_price
+    price_searcher.execution(name, stat)
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 83, in execution
+    self.make_request()
+  File "C:\Users\simon\Documents\dark-and-darker-price-searcher\apiUser.py", line 59, in make_request
+    self.response_data = response.json()
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

@@ -1,3 +1,2 @@
 @echo off
-python "dirty clicker.py"
-exit
+python -i "main.py"

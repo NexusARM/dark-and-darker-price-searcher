@@ -1,0 +1,6 @@
+requests
+pillow
+numpy
+opencv-python
+pytesseract
+keyboard

@@ -2,7 +2,6 @@ from PIL import ImageGrab, Image
 import numpy as np
 import cv2
 import pytesseract
-from time import sleep
 import re
 
 class ImageProcessor:
@@ -24,9 +23,8 @@ class ImageProcessor:
         best_match_val = 0
         best_match_loc = None
         best_match_scale = 1
-
-        # Try different scales of the template
-        for scale in np.linspace(0.5, 1.5, 20):
+        # Try different scales of the template from bigger to smaller
+        for scale in np.linspace(1.5, 0.5, 20):
             resized_template = cv2.resize(template, (int(template_w * scale), int(template_h * scale)))
             if resized_template.shape[0] > screenshot_cv.shape[0] or resized_template.shape[1] > screenshot_cv.shape[1]:
                 continue
@@ -55,8 +53,9 @@ class ImageProcessor:
         top_left, top_right, bottom_left, bottom_right, match_val = self.find_image_in_screenshot(template_path)
         if top_left and bottom_right:
             height = bottom_right[1] - top_left[1]
-            new_right_x = bottom_right[0] + int(height * 0.72)
+            new_right_x = bottom_right[0] + int(height * 1)
             cropped_image = self.screenshot.crop((top_left[0], top_left[1], new_right_x, bottom_right[1]))
+            cropped_image.save("screenshots/cropped_image.png")
             return cropped_image, match_val
         return None, 0
 
