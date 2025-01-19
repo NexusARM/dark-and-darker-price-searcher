@@ -8,8 +8,8 @@ To use this program, follow these simple steps:
 
    - You can download Tesseract OCR from the following link: [Tesseract OCR - UB Mannheim](https://github.com/UB-Mannheim/tesseract/wiki).
 
-2. **Install Python dependencies:**
-
+2. **Install Python AND HIS dependencies:**
+   - Download and install python (skip if you have it installed)
    - After downloading the repository, run the command:
      ```bash
      pip install -r requirements.txt
