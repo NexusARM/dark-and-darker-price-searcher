@@ -1,2 +1,2 @@
 @echo off
-python -i "main.py"
+python -i "main.py" 1440 2560

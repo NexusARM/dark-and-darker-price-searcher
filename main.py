@@ -2,13 +2,16 @@ from ImageProcessor import ImageProcessor
 from apiUser import PriceSearcher
 import keyboard
 import logging
+import sys
+
+global number1, number2
 
 # Configure logging
 logging.basicConfig(filename='error.log', level=logging.ERROR, format='%(asctime)s %(message)s')
 
 def process_image_and_search_price():
     try:
-        imageProcessor = ImageProcessor(1440, 2560)
+        imageProcessor = ImageProcessor(number1, number2)
         cropped_image, match_val = imageProcessor.find_and_crop_image()
         if cropped_image:
             text = imageProcessor.extract_text_from_image(cropped_image)
@@ -27,6 +30,20 @@ def process_image_and_search_price():
     except Exception as e:
         logging.error("An error occurred", exc_info=True)
         print("An error occurred. Check the error.log file for more details.")
+
+if len(sys.argv) != 3:
+    print("Usage: python main.py <number1> <number2>")
+    sys.exit(1)
+
+try:
+    number1 = int(sys.argv[1])
+    number2 = int(sys.argv[2])
+except ValueError:
+    print("Both arguments must be integers.")
+    sys.exit(1)
+
+print(f"resolution: {number1} x {number2}")
+
 
 keyboard.add_hotkey('shift+p', process_image_and_search_price)
 

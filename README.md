@@ -17,63 +17,54 @@ To use this program, follow these simple steps:
 
 ---
 
-## 📝 **Program Description**
+## 🖍 **Program Description**
 
-This program is designed to facilitate the price lookup of an item on [DND Prices](https://www.dndprices.com/) during a game. **Two screens are required** for optimal use: one dedicated to the game and the other to the browser.
-
-The program is divided into two main components:
+This program helps you quickly look up item prices on [DND Prices](https://www.dndprices.com/) during gameplay. **Two main components** handle the task efficiently:
 
 ### 1️⃣ **ImageProcessor**
 
-This part is a Python class that:
+This component extracts text from the game screen:
 
-- **Extracts text from the item description** visible on the game screen.
-- **How it works:**
-  1. Takes a screenshot.
-  2. Identifies the borders of the box containing the item description.
-  3. Crops the box to isolate only the item's text.
-  4. Filters colors, keeping only those relevant (item name and random modifiers).
-  5. Processes the remaining text for accurate reading using OCR.
+- Takes a screenshot of the item description.
+- Identifies and crops the text box around the description.
+- Filters and processes the text for accurate recognition using OCR.
 
-> **Note:** For correct operation, the item description must be fully visible on the game screen when this class is executed.
+> **Important:** Ensure the item description is fully visible in the game for the best results.
 
-### 2️⃣ **Dirty Clicker**
+### 2️⃣ **ApiUser**
 
-This second part of the program performs predefined clicks on the second screen. It is useful for automatically navigating the site and searching for the item.
+This component uses the data from the **ImageProcessor** to:
 
-- **How it works:**
-  - Executes clicks on specific coordinates of the second screen.
-  - Currently, the coordinates must be manually configured based on your computer setup.
-  - The resolution is currently set to **2K**; if you use a different resolution, you will need to modify the code to adjust it.
+- Make an API call to the DND Prices service.
+- Retrieve item prices programmatically, eliminating the need for manual searches.
 
-> **Note:** This component is still "rough" and could be improved to adapt automatically to different configurations.
+### 3️⃣ **Main Program**
+
+The `main.py` script combines both components, streamlining the entire process for you.
 
 ---
 
 ## 🚀 **How to Use the Program**
 
-1. Set up your environment:
+1. **Prepare Your Setup:**
 
-   - Ensure that the second screen is positioned and configured correctly.
-   - Modify the coordinates in Dirty Clicker to suit your setup.
+   - Open the file `launcher.bat` and update the two numbers in the file to match your screen resolution.
 
-2. Run the program:
+2. **Run the Program:**
 
-   - Execute the Python code and ensure the item description is visible when **ImageProcessor** is executed.
-
-3. Let the program do the rest! 😊
+   - Launch the `launcher.bat` file and wait for a terminal to open.
+   - In the game, hover over the item and press **Shift + P** to search for the price.
+   - The terminal will display the item's price. When two numbers appear, prioritize the second one, as it represents the final calculated price from the API.
 
 ---
 
 ## 💡 **Suggestions and Future Improvements**
 
-- **Coordinate automation:** Implement a more dynamic system to automatically detect click coordinates.
-- **Support for other resolutions:** Adapt the program to work without manual adjustments for different screen resolutions.
-- **User interface:** Add a graphical interface to simplify configuration and program usage.
+- **User Interface:** Add a graphical interface to make the program easier to configure and use.
 
 ---
 
-## 📬 **Contact**
+## 📨 **Contact**
 
 For questions, issues, or suggestions, feel free to reach out!
 
@@ -85,28 +76,4 @@ If you wish to contribute to the development, you can open an issue on GitHub or
 
 👤 **Username:** nexusarm
 
-
-
-# 🔮 **Future Possibilities with DND Prices API**
-
-If, in the future, it becomes possible to obtain access to the APIs of [DND Prices](https://www.dndprices.com/), the program could be significantly enhanced. Specifically:
-
-1. **Elimination of the Second Screen Requirement:**
-
-   - With direct access to the DND Prices API, it would no longer be necessary to use a second screen for price lookups. The program could retrieve item prices programmatically, reducing complexity and improving usability.
-
-2. **In-Game Overlay Integration:**
-
-   - The program could evolve into an overlay system directly displayed on the game screen. This would allow users to see item prices in real-time without interrupting their gameplay experience.
-
-3. **Enhanced Speed and Accuracy:**
-
-   - By using APIs, data retrieval would be faster and more accurate, avoiding potential issues with OCR errors or misclicks.
-
-
-These improvements would make the tool more user-friendly and efficient, opening up new opportunities for advanced features and seamless integration.
-
-
----
-
-For now, the current program setup serves as a workaround until such API access becomes available.
+#
