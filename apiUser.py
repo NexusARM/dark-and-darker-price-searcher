@@ -34,6 +34,9 @@ class PriceSearcher:
             rarity = "Epic"
         elif len(rolls) == 4:
             rarity = "Legendary"
+        elif len(rolls) == 5:
+            rarity = "Unique"    
+        
 
         self.body = [
             {

@@ -24,7 +24,7 @@ class ImageProcessor:
         best_match_loc = None
         best_match_scale = 1
         # Try different scales of the template from bigger to smaller
-        for scale in np.linspace(1.5, 0.5, 20):
+        for scale in np.linspace(2.0, 0.5, 30):
             resized_template = cv2.resize(template, (int(template_w * scale), int(template_h * scale)))
             if resized_template.shape[0] > screenshot_cv.shape[0] or resized_template.shape[1] > screenshot_cv.shape[1]:
                 continue
@@ -54,7 +54,7 @@ class ImageProcessor:
         if top_left and bottom_right:
             height = bottom_right[1] - top_left[1]
             new_right_x = bottom_right[0] + int(height * 1)
-            cropped_image = self.screenshot.crop((top_left[0], top_left[1], new_right_x, bottom_right[1]))
+            cropped_image = self.screenshot.crop((top_left[0]*(1-0.03), top_left[1]*(1-0.03), new_right_x*(1+0.03), bottom_right[1]*(1+0.03)))
             cropped_image.save("screenshots/cropped_image.png")
             return cropped_image, match_val
         return None, 0
@@ -84,7 +84,7 @@ class ImageProcessor:
         # Use Tesseract to extract text from the masked image
         text = pytesseract.image_to_string(masked_image_pil)
         # Remove specific words from the extracted text
-        words_to_remove = ["Uncommon", "Rare", "Epic", "Legendary"]
+        words_to_remove = ["Uncommon", "Rare", "Epic", "Legendary", "Unique"]
         for word in words_to_remove:
             text = text.replace(word, "")
         return text
