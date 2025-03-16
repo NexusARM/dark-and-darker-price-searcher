@@ -1,5 +1,4 @@
 import requests
-import json
 
 class PriceSearcher:
     def __init__(self, info_file_path="info.txt"):
@@ -10,9 +9,10 @@ class PriceSearcher:
         self.response_data = None
         self.final_price = None
         self.estimated_price = None
-        self.load_info({}, [])  # Call load_info method with empty dictionary and list
+        self.demand= None
+        self.load_info({}, [], "common")  # Call load_info method with empty dictionary and list
 
-    def load_info(self, name, rolls):
+    def load_info(self, name, rolls, rarity):
         with open(self.info_file_path, 'r') as file:
             lines = file.readlines()
         
@@ -23,35 +23,22 @@ class PriceSearcher:
             if ':' in line:
                 key, value = line.strip().split(':', 1)
                 self.headers[key.strip()] = value.strip()
-
-        # Construct the body from data and rolls
-        rarity = "Unknown"
-        if len(rolls) == 1:
-            rarity = "Uncommon"
-        elif len(rolls) == 2:
-            rarity = "Rare"
-        elif len(rolls) == 3:
-            rarity = "Epic"
-        elif len(rolls) == 4:
-            rarity = "Legendary"
-        elif len(rolls) == 5:
-            rarity = "Unique"    
-        
+                
 
         self.body = [
             {
             "Name": name,
             "Rarity": rarity,
-            "Roll1": rolls[0] if len(rolls) > 0 else "0.0",
-            "Itemroll1": "1",
-            "Roll2": rolls[1] if len(rolls) > 1 else "0.0",
-            "Itemroll2": "1",
-            "Roll3": rolls[2] if len(rolls) > 2 else "0.0",
-            "Itemroll3": "1",
-            "Roll4": rolls[3] if len(rolls) > 3 else "0.0",
-            "Itemroll4": "1",
-            "Roll5": rolls[4] if len(rolls) > 4 else "0.0",
-            "Itemroll5": "1",
+            "Roll1": rolls[0][0] if len(rolls) > 0 else "0.0",
+            "Itemroll1": rolls[0][1] if len(rolls) > 0 else "1",
+            "Roll2": rolls[1][0] if len(rolls) > 1 else "0.0",
+            "Itemroll2": rolls[1][1] if len(rolls) > 1 else "1",
+            "Roll3": rolls[2][0] if len(rolls) > 2 else "0.0",
+            "Itemroll3": rolls[2][1] if len(rolls) > 2 else "1",
+            "Roll4": rolls[3][0] if len(rolls) > 3 else "0.0",
+            "Itemroll4": rolls[3][1] if len(rolls) > 3 else "1",
+            "Roll5": rolls[4][0] if len(rolls) > 4 else "0.0",
+            "Itemroll5": rolls[4][1] if len(rolls) > 4 else "1",
             "Lastdays": "4",
             "Amount": "3"
             }
@@ -60,7 +47,7 @@ class PriceSearcher:
     def make_request(self):
         response = requests.post(self.url, headers=self.headers, json=self.body)
         self.response_data = response.json()
-
+        
     def extract_prices(self):
         if 'result' in self.response_data:
             for item in self.response_data['result']:
@@ -69,6 +56,8 @@ class PriceSearcher:
                         self.final_price = item['final_price']
                     if 'estimated_price' in item:
                         self.estimated_price = item['estimated_price']
+                    if 'estimated_demand' in item:
+                        self.demand = item['estimated_demand']
                 elif isinstance(item, list):
                     for sub_item in item:
                         if isinstance(sub_item, dict):
@@ -76,12 +65,13 @@ class PriceSearcher:
                                 self.final_price = sub_item['final_price']
                             if 'estimated_price' in sub_item:
                                 self.estimated_price = sub_item['estimated_price']
+                            if 'estimated_demand' in sub_item:
+                                self.demand = sub_item['estimated_demand']
         else:
             print("'result' key not found in the response")
-        return [self.final_price, self.estimated_price]
-
+        return [self.final_price, self.estimated_price, self.demand]
             
-    def execution(self, name, stat):
-        self.load_info(name, stat)
+    def execution(self, name, stat, rarity):
+        self.load_info(name, stat, rarity)
         self.make_request()
         return self.extract_prices()

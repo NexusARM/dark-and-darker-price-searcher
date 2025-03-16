@@ -19,10 +19,12 @@ def process_image_and_search_price():
             if name and stat:
                 print("Extracted name:", name)
                 print("Extracted stat:", stat)
+                print("Extracted grade:", imageProcessor.grade)
                 price_searcher = PriceSearcher()
-                price_searcher.execution(name, stat)
+                price_searcher.execution(name, stat, imageProcessor.grade)
                 print("Estimated price:", price_searcher.estimated_price)
                 print("Final price:", price_searcher.final_price)
+                print("Estimated demand:", price_searcher.demand)
             else:
                 print("Name or stat is empty, skipping click operation.")
         else:
