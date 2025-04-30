@@ -1,8 +1,10 @@
-from ImageProcessor import ImageProcessor
-from apiUser import PriceSearcher
-import keyboard
 import logging
 import sys
+
+import keyboard
+
+from ImageProcessor import ImageProcessor
+from apiUser import PriceSearcher
 
 global number1, number2
 
@@ -12,24 +14,26 @@ logging.basicConfig(filename='error.log', level=logging.ERROR, format='%(asctime
 def process_image_and_search_price():
     try:
         imageProcessor = ImageProcessor(number1, number2)
-        cropped_image, match_val = imageProcessor.find_and_crop_image()
-        cropped_image.save("screenshots/cropped_image.png")
-        if cropped_image:
-            text = imageProcessor.extract_text_from_image(cropped_image)
-            name, stat = imageProcessor.extract_name_and_stat(text)
-            if name and stat:
-                print("Extracted name:", name)
-                print("Extracted stat:", stat)
-                print("Extracted grade:", imageProcessor.grade)
-                price_searcher = PriceSearcher()
-                price_searcher.execution(name, stat, imageProcessor.grade)
-                print("Estimated price:", price_searcher.estimated_price)
-                print("Final price:", price_searcher.final_price)
-                print("Estimated demand:", price_searcher.demand)
-            else:
-                print("Name or stat is empty, skipping click operation.")
-        else:
+        # Use the new method with retry logic
+        result = imageProcessor.find_and_crop_image_with_retry()
+
+        if result is None or len(result) < 4:
             print("Template not found in the screenshot.")
+            return
+
+        cropped_image, match_val, name, stat = result
+
+        if name and stat:
+            print("Extracted name:", name)
+            print("Extracted stat:", stat)
+            print("Extracted grade:", imageProcessor.grade)
+            price_searcher = PriceSearcher()
+            price_searcher.execution(name, stat, imageProcessor.grade)
+            print("Estimated price:", price_searcher.estimated_price)
+            print("Final price:", price_searcher.final_price)
+            print("Estimated demand:", price_searcher.demand)
+        else:
+            print("Name or stat is empty, skipping click operation.")
     except Exception as e:
         logging.error("An error occurred", exc_info=True)
         print("An error occurred. Check the error.log file for more details.")

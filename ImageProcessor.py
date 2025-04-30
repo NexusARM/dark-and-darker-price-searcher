@@ -1,9 +1,11 @@
-from PIL import ImageGrab, Image, ImageEnhance
-import numpy as np
-import cv2
-import pytesseract
-import re
 import difflib
+import re
+
+import cv2
+import numpy as np
+import pytesseract
+from PIL import ImageGrab, Image, ImageEnhance
+
 
 class ImageProcessor:
     def __init__(self, resolution_height, resolution_width):
@@ -36,14 +38,34 @@ class ImageProcessor:
 
         return None, None, 0
 
-    def find_and_crop_image(self, template_path="border.png"):
+    def find_and_crop_image(self, template_path="border.png", offset_multiplier=1):
         top_left, bottom_right, match_val = self.find_image_in_screenshot(template_path)
         if top_left and bottom_right:
             height = bottom_right[1] - top_left[1]
-            new_right_x = bottom_right[0] + int(height * 1.1)
-            cropped_image = self.screenshot.crop((top_left[0], top_left[1] - 200, new_right_x, bottom_right[1]))
+            new_right_x = bottom_right[0] + int(height * 1.5)
+            # Apply the offset multiplier to adjust the top coordinate
+            top_offset = 200 + 50 * offset_multiplier
+            cropped_image = self.screenshot.crop((top_left[0], top_left[1] - top_offset, new_right_x, bottom_right[1]))
             return cropped_image, match_val
         return None, 0
+
+    def find_and_crop_image_with_retry(self, template_path="border.png", max_retries=5):
+        for attempt in range(1, max_retries + 1):
+            cropped_image, match_val = self.find_and_crop_image(template_path, offset_multiplier=attempt)
+
+            if not cropped_image:
+                return None, 0
+
+            # Save the cropped image for debugging
+            cropped_image.save("screenshots/cropped_image.png")
+
+            text = self.extract_text_from_image(cropped_image)
+            name, stats = self.extract_name_and_stat(text)
+
+            if name != "Unknown Item":
+                return cropped_image, match_val, name, stats
+
+        return cropped_image, match_val, name, stats
 
     def extract_text_from_image(self, image):
         np_image = np.array(image.convert("RGB"))
@@ -68,13 +90,45 @@ class ImageProcessor:
         return text
 
     def extract_name_and_stat(self, text):
-        match = re.match(r"([a-zA-Z\s]+)[+-]?\d*", text)
-        name = match.group(1).strip() if match else text
-        filtered_text = [line.strip() for line in " ".join(re.findall(r"[a-zA-Z\s]+", text)).split("\n") if line.strip()]
-        filtered_modifier = [line.strip() for line in " ".join(re.findall(r"[0-9\s]+", text)).split("\n") if line.strip()]
-        filtered_modifier = [re.sub(r'(?<=\d) (?=\d)', '.', s) for s in filtered_modifier]
-        print(filtered_modifier)
-        combined_stats = [(filtered_text[0], 0)] + list(zip(filtered_text[1:], filtered_modifier + ['0'] * (len(filtered_text) - 1 - len(filtered_modifier))))
-        list_of_stat = ['All Attributes', 'Armor Penetration', 'Magical Power', 'Additional Physical Damage', 'Armor Rating', 'Magical Damage Reduction', 'True Magical Damage', 'Max Health Bonus', 'Physical Damage Reduction', 'Additional Magical Damage', 'Projectile Damage Reduction', 'Regular Interaction Speed', 'Magic Penetration', 'Physical Power', 'True Physical Damage', 'Magic Resistance', 'Additional Memory Capacity', 'Max Health', 'Debuff Duration Bonus', 'Magical Interaction Speed', 'Buff Duration Bonus', 'Spell Casting Speed', 'Memory Capacity Bonus', 'Luck', 'Action Speed', 'Will', 'Strength', 'Physical Damage Bonus', 'Dexterity', 'Magical Damage Bonus', 'Resourcefulness', 'Knowledge', 'Vigor', 'Magical Healing', 'Additional Weapon Damage', 'Physical Healing', 'Agility', 'Move Speed Bonus', 'Additional Move Speed']
-        stat = [(stat_name if stat_name in list_of_stat else difflib.get_close_matches(stat_name, list_of_stat, n=1, cutoff=0.0)[0], value) for stat_name, value in combined_stats if stat_name != name]
-        return name, stat
+        lines = [line.strip() for line in text.split('\n') if line.strip()]
+
+        if lines and (lines[0].startswith('+') or lines[0].startswith('-')):
+            stat_lines = lines
+            stats = self._extract_stats_from_lines(stat_lines)
+            name = "Unknown Item"
+        else:
+            name = lines[0] if lines else ""
+            stat_lines = lines[1:] if len(lines) > 1 else []
+            stats = self._extract_stats_from_lines(stat_lines)
+
+        print([stat[1] for stat in stats])
+
+        return name, stats
+
+    def _extract_stats_from_lines(self, stat_lines):
+        stats = []
+        for line in stat_lines:
+            clean_line = line.lstrip('+-')
+            value_match = re.search(r'(\d+\.?\d*)', clean_line)
+            value = value_match.group(1) if value_match else '0'
+            stat_name = re.sub(r'\d+\.?\d*\s*%?\s*', '', clean_line).strip()
+            list_of_stat = ['All Attributes', 'Armor Penetration', 'Magical Power', 'Additional Physical Damage',
+                            'Armor Rating', 'Magical Damage Reduction', 'True Magical Damage', 'Max Health Bonus',
+                            'Physical Damage Reduction', 'Additional Magical Damage', 'Projectile Damage Reduction',
+                            'Regular Interaction Speed', 'Magic Penetration', 'Physical Power', 'True Physical Damage',
+                            'Magic Resistance', 'Additional Memory Capacity', 'Max Health', 'Debuff Duration Bonus',
+                            'Magical Interaction Speed', 'Buff Duration Bonus', 'Spell Casting Speed',
+                            'Memory Capacity Bonus', 'Luck', 'Action Speed', 'Will', 'Strength',
+                            'Physical Damage Bonus', 'Dexterity', 'Magical Damage Bonus', 'Resourcefulness',
+                            'Knowledge', 'Vigor', 'Magical Healing', 'Additional Weapon Damage', 'Physical Healing',
+                            'Agility', 'Move Speed Bonus', 'Additional Move Speed']
+
+            if stat_name in list_of_stat:
+                matched_stat = stat_name
+            else:
+                matches = difflib.get_close_matches(stat_name, list_of_stat, n=1, cutoff=0.0)
+                matched_stat = matches[0] if matches else stat_name
+
+            stats.append((matched_stat, value))
+
+        return stats
