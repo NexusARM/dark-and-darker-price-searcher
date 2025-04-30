@@ -33,7 +33,8 @@ class ImageProcessor:
 
         if best_match_loc:
             top_left = best_match_loc
-            bottom_right = (top_left[0] + int(template_w * best_match_scale), top_left[1] + int(template_h * best_match_scale))
+            bottom_right = (top_left[0] + int(template_w * best_match_scale),
+                            top_left[1] + int(template_h * best_match_scale))
             return top_left, bottom_right, best_match_val
 
         return None, None, 0
