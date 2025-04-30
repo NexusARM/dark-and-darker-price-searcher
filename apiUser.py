@@ -23,8 +23,19 @@ class PriceSearcher:
             if ':' in line:
                 key, value = line.strip().split(':', 1)
                 self.headers[key.strip()] = value.strip()
-                
 
+        if rarity not in ["Uncommon", "Rare", "Epic", "Legendary", "Unique"]:
+            if len(rolls) == 1:
+                rarity = "Uncommon"
+            elif len(rolls) == 2:
+                rarity = "Rare"
+            elif len(rolls) == 3:
+                rarity = "Epic"
+            elif len(rolls) == 4:
+                rarity = "Legendary"
+            elif len(rolls) == 5:
+                rarity = "Unique"
+                
         self.body = [
             {
             "Name": name,
@@ -43,8 +54,9 @@ class PriceSearcher:
             "Amount": "3"
             }
         ]
-
+        
     def make_request(self):
+        print("body:", self.body)
         response = requests.post(self.url, headers=self.headers, json=self.body)
         self.response_data = response.json()
         

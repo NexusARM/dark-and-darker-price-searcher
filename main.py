@@ -13,6 +13,7 @@ def process_image_and_search_price():
     try:
         imageProcessor = ImageProcessor(number1, number2)
         cropped_image, match_val = imageProcessor.find_and_crop_image()
+        cropped_image.save("screenshots/cropped_image.png")
         if cropped_image:
             text = imageProcessor.extract_text_from_image(cropped_image)
             name, stat = imageProcessor.extract_name_and_stat(text)
