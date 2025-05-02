@@ -1,0 +1,14 @@
+{
+    "resolution": {
+        "height": 1440,
+        "width": 2560
+    },
+    "tesseract_path": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+    "screenshot_dir": "screenshots",
+    "data_dir": "data",
+    "api": {
+        "info_file": "data/info.txt",
+        "last_days": "4",
+        "amount": "3"
+    }
+}

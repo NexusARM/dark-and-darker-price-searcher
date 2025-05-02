@@ -1,2 +1,4 @@
 @echo off
-python -i "main.py" 1440 2560
+echo Starting Dark and Darker Price Searcher...
+python main.py
+pause
