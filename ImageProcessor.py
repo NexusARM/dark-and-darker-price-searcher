@@ -15,6 +15,22 @@ class ImageProcessor:
         self.screenshot = enhancer.enhance(1)
         self.screenshot.save("screenshots/screenshot.png")
         pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+        # Initialize list_of_stat from randomStat file
+        with open('data/randomStat', 'r') as f:
+            self.list_of_stat = [line.strip() for line in f.readlines()]
+
+        try:
+            file_paths = [
+                'data/itemsName.txt',
+                'data/specialItemName.txt',
+                'data/pendantAndRingName.txt'  # Fixed extension
+            ]
+            self.list_of_item = []
+            for file_path in file_paths:
+                with open(file_path, 'r') as f:
+                    self.list_of_item.extend(line.strip() for line in f)
+        except Exception as e:
+            print(f"Error reading item files: {e}")
 
     def find_image_in_screenshot(self, template_path):
         template = cv2.imread(template_path, cv2.IMREAD_GRAYSCALE)
@@ -99,6 +115,8 @@ class ImageProcessor:
             name = "Unknown Item"
         else:
             name = lines[0] if lines else ""
+            # Use _extract_item_from_lines to improve item name extraction
+            name = self._extract_item_from_lines(name)
             stat_lines = lines[1:] if len(lines) > 1 else []
             stats = self._extract_stats_from_lines(stat_lines)
 
@@ -113,23 +131,20 @@ class ImageProcessor:
             value_match = re.search(r'(\d+\.?\d*)', clean_line)
             value = value_match.group(1) if value_match else '0'
             stat_name = re.sub(r'\d+\.?\d*\s*%?\s*', '', clean_line).strip()
-            list_of_stat = ['All Attributes', 'Armor Penetration', 'Magical Power', 'Additional Physical Damage',
-                            'Armor Rating', 'Magical Damage Reduction', 'True Magical Damage', 'Max Health Bonus',
-                            'Physical Damage Reduction', 'Additional Magical Damage', 'Projectile Damage Reduction',
-                            'Regular Interaction Speed', 'Magic Penetration', 'Physical Power', 'True Physical Damage',
-                            'Magic Resistance', 'Additional Memory Capacity', 'Max Health', 'Debuff Duration Bonus',
-                            'Magical Interaction Speed', 'Buff Duration Bonus', 'Spell Casting Speed',
-                            'Memory Capacity Bonus', 'Luck', 'Action Speed', 'Will', 'Strength',
-                            'Physical Damage Bonus', 'Dexterity', 'Magical Damage Bonus', 'Resourcefulness',
-                            'Knowledge', 'Vigor', 'Magical Healing', 'Additional Weapon Damage', 'Physical Healing',
-                            'Agility', 'Move Speed Bonus', 'Additional Move Speed']
 
-            if stat_name in list_of_stat:
+            if stat_name in self.list_of_stat:
                 matched_stat = stat_name
             else:
-                matches = difflib.get_close_matches(stat_name, list_of_stat, n=1, cutoff=0.0)
+                matches = difflib.get_close_matches(stat_name, self.list_of_stat, n=1, cutoff=0.0)
                 matched_stat = matches[0] if matches else stat_name
 
             stats.append((matched_stat, value))
 
         return stats
+
+    def _extract_item_from_lines(self, item_name):
+        if item_name in self.list_of_item:
+            return item_name
+        else:
+            matches = difflib.get_close_matches(item_name, self.list_of_item, n=1, cutoff=0.0)
+            return matches[0] if matches else item_name

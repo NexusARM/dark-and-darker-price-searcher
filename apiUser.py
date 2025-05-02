@@ -1,7 +1,7 @@
 import requests
 
 class PriceSearcher:
-    def __init__(self, info_file_path="info.txt"):
+    def __init__(self, info_file_path="data/info.txt"):
         self.info_file_path = info_file_path
         self.url = None
         self.headers = {}
@@ -15,7 +15,7 @@ class PriceSearcher:
     def load_info(self, name, rolls, rarity):
         with open(self.info_file_path, 'r') as file:
             lines = file.readlines()
-        
+
         self.url = lines[1].strip()
         header_start = lines.index('headers\n') + 1
 
@@ -35,7 +35,7 @@ class PriceSearcher:
                 rarity = "Legendary"
             elif len(rolls) == 5:
                 rarity = "Unique"
-                
+
         self.body = [
             {
             "Name": name,
@@ -54,12 +54,12 @@ class PriceSearcher:
             "Amount": "3"
             }
         ]
-        
+
     def make_request(self):
         print("body:", self.body)
         response = requests.post(self.url, headers=self.headers, json=self.body)
         self.response_data = response.json()
-        
+
     def extract_prices(self):
         if 'result' in self.response_data:
             for item in self.response_data['result']:
@@ -82,7 +82,7 @@ class PriceSearcher:
         else:
             print("'result' key not found in the response")
         return [self.final_price, self.estimated_price, self.demand]
-            
+
     def execution(self, name, stat, rarity):
         self.load_info(name, stat, rarity)
         self.make_request()
