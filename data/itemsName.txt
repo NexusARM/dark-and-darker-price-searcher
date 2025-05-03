@@ -1,0 +1,296 @@
+Adventurer Boots
+Adventurer Cloak
+Adventurer Tunic
+Arcane Garb
+Arcane Gloves
+Arcane Hood
+Armet
+Arming Sword
+Axe of Righteousness
+Badger Pendant
+Barbuta Helm
+Bardic Pants
+Bardiche
+Battle Axe
+Bear Pendant
+Blade of Righteousness
+Bloodsap Blade
+Bloodwoven Gloves
+Bloodwoven Robe
+Boneshaper
+Bow of Righteousness
+Brave Hunters Pants
+Buckled Boots
+Buckler
+Buttoned Boots
+Buttoned Leggings
+Castillon Dagger
+Centaurs Madness
+Ceremonial Headdress
+Ceremonial Staff
+Champion Armor
+Chapel De Fer
+Chaperon
+Cloak of Darkness
+Cloth Pants
+Club
+Cobalt Chapel De Fer
+Cobalt Frock
+Cobalt Hat
+Cobalt Heavy Gauntlet
+Cobalt Hood
+Cobalt Leather Gloves
+Cobalt Lightfoot Boots
+Cobalt Plate Boots
+Cobalt Plate Pants
+Cobalt Regal Gambeson
+Cobalt Templar Armor
+Cobalt Trousers
+Cobalt Viking Helm
+Coif
+Copperlight Attire
+Copperlight Gauntlets
+Copperlight Kettle Hat
+Copperlight Leggings
+Copperlight Lightfoot Boots
+Copperlight Outfit
+Copperlight Pants
+Copperlight Plate Boots
+Copperlight Plate Pants
+Copperlight Riveted Gloves
+Copperlight Sanctum Plate Armor
+Copperlight Shadow Hood
+Copperlight Straw Hat
+Copperlight Tunic
+Cowl of Darkness
+Crossbow
+Crusader Armor
+Crusader Helm
+Crystal Ball
+Crystal Sword
+Cyclops Vision Crystal
+Dagger of Righteousness
+Dark Cuirass
+Dark Leather Leggings
+Dark Plate Armor
+Darkgrove Hood
+Darkgrove Robe
+Darkleaf Boots
+Dashing Boots
+Demon Grip Gloves
+Demonclad Leggings
+Demons Glee
+Divine Axe
+Divine Blade
+Divine Bow
+Divine Dagger
+Divine Rod
+Divine Short Sword
+Divine Staff
+Double Axe
+Doublet
+Dread Hood
+Drum
+Elkwood Crown
+Elkwood Gloves
+Falchion
+Fangs of Death Necklace
+Feathered Hat
+Felling Axe
+Fine Cuirass
+Flanged Mace
+Flute
+Forest Boots
+Forest Hood
+Foul Boots
+Fox Pendant
+Frock
+Frost Amulet
+Frostlight Abyss Plate Armor
+Frostlight Aketon
+Frostlight Cloak
+Frostlight Crusader Helm
+Frostlight Crystal Sword
+Frostlight Feathered hat
+Frostlight Gauntlets
+Frostlight Hood
+Frostlight Lantern Shield
+Frostlight Leather Leggings
+Frostlight Lightfoot Boots
+Frostlight Mystic Gloves
+Frostlight Norman Nasal Helm
+Frostlight Oracle Robe
+Frostlight Plate Boots
+Frostlight Plate Pants
+Frostlight Riveted Gloves
+Frostlight Rugged Boots
+Frostlight Runestone Gloves
+Frostlight Spear
+Frostlight Trousers
+Frostlight Warden Outfit
+Frostlight Wizard Hat
+Gjermundbu
+Gloves of Utility
+Golden Armet
+Golden Boots
+Golden Chausses
+Golden Cloak
+Golden Felling Axe
+Golden Gauntlets
+Golden Gjermundbu
+Golden Gloves
+Golden Hounskull
+Golden Leaf Hood
+Golden Leggings
+Golden Padded Tunic
+Golden Plate
+Golden Plate Boots
+Golden Plate Pants
+Golden Robe
+Golden Scarf
+Golden Viking Sword
+Grand Brigandine
+Gravewolf Gloves
+Great Helm
+Grimslayer
+Grimsmile Ring
+Halberd
+Hand Crossbow
+Hatchet
+Heater Shield
+Heavy Boots
+Heavy Gambeson
+Heavy Gauntlets
+Heavy Leather Leggings
+Horsemans Axe
+Hounskull
+Kettle Hat
+Kris Dagger
+Laced Turnshoe
+Lantern
+Lantern Shield
+Leather Bonnet
+Leather Cap
+Leather Chausses
+Leather Gloves
+Leather Leggings
+Light Aketon
+Light Bringer
+Light Gauntlets
+Lightfoot Boots
+Longbow
+Longsword
+Loose Trousers
+Low Boots
+Lute
+Lyre
+Magic Staff
+Mana Sphere
+Marauder Outfit
+Mercurial Cloak
+Monkey Pendant
+Morning Star
+Mystic Gloves
+Mystic Vestments
+Necklace of Peace
+Norman Nasal Helm
+Northern Full Tunic
+Occultist Boots
+Occultist Hood
+Occultist Pants
+Occultist Robe
+Occultist Tunic
+Old Shoes
+Open Sallet
+Oracle Robe
+Ornate Jazerant
+Owl Pendant
+Ox Pendant
+Padded Leggings
+Padded Tunic
+Pavise
+Phoenix Choker
+Plate Boots
+Plate Pants
+Pourpoint
+Quarterstaff
+Radiant Cloak
+Ranger Hood
+Rapier
+Rat Pendant
+Rawhide Gloves
+Recurve Bow
+Regal Gambeson
+Reinforced Gloves
+Ring of Courage
+Ring of Finesse
+Ring of Quickness
+Ring of Resolve
+Ring of Survival
+Ring of Vitality
+Ring of Wisdom
+Ritual Robe
+Riveted Gloves
+Robe of Darkness
+Rod of Righteousness
+Rogue Cowl
+Rondel Dagger
+Round Shield
+Rubysilver Adventurer Boots
+Rubysilver Barbuta Helm
+Rubysilver Cap
+Rubysilver Cuirass
+Rubysilver Doublet
+Rubysilver Gauntlets
+Rubysilver Hood
+Rubysilver Leggings
+Rubysilver Plate Boots
+Rubysilver Plate Pants
+Rubysilver Rawhide Gloves
+Rubysilver Vestments
+Rugged Boots
+Runestone Gloves
+Sallet
+Shadow Hood
+Shadow Mask
+Shoes of Darkness
+Short Sword
+Short Sword of Righteousness
+Sovereigns Ghostblade
+Spangenhelm
+Spear
+Spear of Rot
+Spellbook
+Splendid Cloak
+Staff of Righteousness
+Stiletto Dagger
+Stitched Turnshoe
+Straw Hat
+Studded Leather
+Survival Bow
+Tattered Cloak
+Templar Armor
+Topfhelm
+Torq of Soul
+Tri-Pelt Doublet
+Tri-Pelt Northern Full Tunic
+Trolls Bane
+Troubadour Outfit
+Turnshoe
+Vigilant Cloak
+Viking Helm
+Viking Sword
+Visored Barbuta Helm
+Visored Sallet
+Void Blade
+Wanderer Attire
+War Hammer
+War Maul
+Warden Outfit
+Watchman Cloak
+Wind Locket
+Windlass Crossbow
+Wizard Hat
+Wizard Shoes
+Wolf Hunter Leggings
+Zweihander

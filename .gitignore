@@ -1,0 +1,16 @@
+# Python virtual environment
+.venv/
+
+# Debug directory
+debug/
+
+# Screenshots directory
+screenshots/
+
+# Test directory
+test/
+
+# Error log file
+error.log
+
+.idea/
