@@ -161,10 +161,9 @@ def main():
 
     # Display instructions
     print("\n⌨️  Press Shift+P to capture screenshot and search price.")
-    print("⌨️  Press ESC to exit.")
 
     # Wait for ESC key to exit
-    keyboard.wait('esc')
+    keyboard.wait('shift + esc')
     print("Exiting application.")
 
 

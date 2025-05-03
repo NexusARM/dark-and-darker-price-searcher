@@ -12,3 +12,5 @@ test/
 
 # Error log file
 error.log
+
+.idea/

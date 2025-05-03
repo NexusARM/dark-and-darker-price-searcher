@@ -101,6 +101,25 @@ The program uses a `config.json` file for settings. A default configuration is c
    - The terminal will display the item information and price details
    - Press **ESC** to exit the program
 
+## 📚 **Documentation**
+
+Comprehensive documentation is available in the `doc` folder:
+
+- **[index.md](doc/index.md)**: Main documentation entry point with overview and links
+- **[main.py](doc/main.md)**: Documentation for the main program
+- **[ImageProcessor.py](doc/ImageProcessor.md)**: Documentation for the image processing component
+- **[apiUser.py](doc/apiUser.md)**: Documentation for the price searching component
+- **[config.json](doc/config.md)**: Documentation for configuration options
+- **[launcher.bat](doc/launcher.md)**: Documentation for the launcher script
+- **[data_files.md](doc/data_files.md)**: Documentation for the data files
+
+The documentation provides detailed information about each component, including:
+- Purpose and functionality
+- Class and method descriptions
+- Parameters and return values
+- Usage examples
+- Notes and tips
+
 ## 🔄 **Recent Improvements**
 
 The codebase has been significantly upgraded to improve quality and maintainability:

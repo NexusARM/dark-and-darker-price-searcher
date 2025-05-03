@@ -254,8 +254,8 @@ class ImageProcessor:
 
             # Create a mask that keeps only pixels close to the target colors
             for color in target_colors:
-                lower_bound = np.array([max(0, c - 75) for c in color])
-                upper_bound = np.array([min(255, c + 75) for c in color])
+                lower_bound = np.array([max(0, c - 50) for c in color])
+                upper_bound = np.array([min(255, c + 50) for c in color])
                 color_mask = cv2.inRange(np_image, lower_bound, upper_bound)
                 mask = cv2.bitwise_or(mask, color_mask)
 
