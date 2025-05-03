@@ -1,6 +1,6 @@
-requests
-pillow
-numpy
-opencv-python
-pytesseract
-keyboard
+requests>=2.31.0
+pillow>=10.0.0
+numpy>=1.24.0
+opencv-python>=4.8.0
+pytesseract>=0.3.10
+keyboard>=0.13.5
