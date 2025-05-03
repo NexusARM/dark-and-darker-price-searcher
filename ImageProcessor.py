@@ -2,7 +2,7 @@ import difflib
 import logging
 import os
 import re
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, Sequence
 
 import cv2
 import numpy as np
@@ -97,7 +97,8 @@ class ImageProcessor:
             logging.error(f"Error reading item files: {e}")
             return items
 
-    def find_image_in_screenshot(self, template_path: str) -> Tuple[Optional[Tuple[int, int]], Optional[Tuple[int, int]], float]:
+    def find_image_in_screenshot(self, template_path: str) -> tuple[None, None, int] | tuple[
+        Sequence[int], tuple[int, int], float | int]:
         """
         Find a template image within the screenshot using template matching.
 
